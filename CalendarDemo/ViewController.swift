@@ -61,7 +61,7 @@ extension ViewController: ZJCalendarDelegate,ZJCalendarDataSource {
     }
 
     func selectionTextColorOf(_ date: Date) -> UIColor {
-        return UIColor.brown
+        return UIColor.white
     }
 
     func defaultBgColorOf(_ date: Date) -> UIColor {

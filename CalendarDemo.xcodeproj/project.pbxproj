@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FD7AD081207F33FA005EFAB1 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AD080207F33FA005EFAB1 /* CalendarManager.swift */; };
-		FD8ABF54207F621500CC20ED /* CalendarItemV.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8ABF53207F621500CC20ED /* CalendarItemV.swift */; };
 		FDAF0E72207DF797005673E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E71207DF797005673E7 /* AppDelegate.swift */; };
 		FDAF0E74207DF797005673E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E73207DF797005673E7 /* ViewController.swift */; };
 		FDAF0E77207DF797005673E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDAF0E75207DF797005673E7 /* Main.storyboard */; };
@@ -16,13 +15,10 @@
 		FDAF0E7C207DF798005673E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDAF0E7A207DF798005673E7 /* LaunchScreen.storyboard */; };
 		FDAF0E85207DF80F005673E7 /* ZJCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E84207DF80F005673E7 /* ZJCalendarView.swift */; };
 		FDAF0E88207E0240005673E7 /* ZJCalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E87207E0240005673E7 /* ZJCalendarDelegate.swift */; };
-		FDAF0E8A207E0BBB005673E7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E89207E0BBA005673E7 /* CalendarView.swift */; };
-		FDF23141208450D10001323A /* CalendarEventDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF23140208450D10001323A /* CalendarEventDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD7AD080207F33FA005EFAB1 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
-		FD8ABF53207F621500CC20ED /* CalendarItemV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemV.swift; sourceTree = "<group>"; };
 		FDAF0E6E207DF797005673E7 /* CalendarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDAF0E71207DF797005673E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDAF0E73207DF797005673E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,8 +28,6 @@
 		FDAF0E7D207DF798005673E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDAF0E84207DF80F005673E7 /* ZJCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCalendarView.swift; sourceTree = "<group>"; };
 		FDAF0E87207E0240005673E7 /* ZJCalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCalendarDelegate.swift; sourceTree = "<group>"; };
-		FDAF0E89207E0BBA005673E7 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		FDF23140208450D10001323A /* CalendarEventDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventDecorator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +77,6 @@
 				FDAF0E86207E000D005673E7 /* manager */,
 				FDAF0E84207DF80F005673E7 /* ZJCalendarView.swift */,
 				FDAF0E87207E0240005673E7 /* ZJCalendarDelegate.swift */,
-				FDAF0E89207E0BBA005673E7 /* CalendarView.swift */,
-				FDF2313F208450710001323A /* CalendarType */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -95,15 +87,6 @@
 				FD7AD080207F33FA005EFAB1 /* CalendarManager.swift */,
 			);
 			path = manager;
-			sourceTree = "<group>";
-		};
-		FDF2313F208450710001323A /* CalendarType */ = {
-			isa = PBXGroup;
-			children = (
-				FD8ABF53207F621500CC20ED /* CalendarItemV.swift */,
-				FDF23140208450D10001323A /* CalendarEventDecorator.swift */,
-			);
-			path = CalendarType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,13 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDAF0E8A207E0BBB005673E7 /* CalendarView.swift in Sources */,
 				FDAF0E88207E0240005673E7 /* ZJCalendarDelegate.swift in Sources */,
 				FDAF0E74207DF797005673E7 /* ViewController.swift in Sources */,
 				FD7AD081207F33FA005EFAB1 /* CalendarManager.swift in Sources */,
-				FD8ABF54207F621500CC20ED /* CalendarItemV.swift in Sources */,
 				FDAF0E72207DF797005673E7 /* AppDelegate.swift in Sources */,
-				FDF23141208450D10001323A /* CalendarEventDecorator.swift in Sources */,
 				FDAF0E85207DF80F005673E7 /* ZJCalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

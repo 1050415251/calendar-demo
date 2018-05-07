@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import QuartzCore
 
 
 class ZJCalendarView:UIView {
@@ -97,14 +98,15 @@ extension ZJCalendarView {
         }
         drawMonth()
         drawWeek()
+        UIGraphicsPopContext()
     }
 
 
     /// 绘制月份
     func drawMonth() {
+        let currentcontext = UIGraphicsGetCurrentContext()
         let style = NSMutableParagraphStyle()
         style.alignment = .center
-
         var attritustyle = [NSAttributedStringKey: Any]()
         attritustyle[NSAttributedStringKey.paragraphStyle] = style
         //TODO: 绘制上月
@@ -135,11 +137,25 @@ extension ZJCalendarView {
                 if $0 == monthdates[index] {
                     attritustyle[NSAttributedStringKey.foregroundColor] = delegate.selectionTextColorOf($0)
                     attritustyle[NSAttributedStringKey.font] = delegate.selectionFontOf(monthdates[index])
+                    currentcontext?.setAllowsAntialiasing(true)
+                    currentcontext?.setFillColor(delegate.selectionBgColorOf($0).cgColor)
+                   // currentcontext?.setStrokeColor(delegate.selectionBgColorOf($0).cgColor)
+                    let radius:CGFloat = 14
+                    currentcontext?.addArc(center: CGPoint.init(x: SIZE.width * CGFloat(index % 7) + scrollDistance + SIZE.width * 0.5, y: delegate.weekHeight() + SIZE.height * CGFloat(index / 7) + SIZE.height * 0.5), radius: radius, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
+                    //currentcontext?.strokePath()
+                    currentcontext?.fillPath()
+
+                    let pathRect = UIBezierPath.init(arcCenter: CGPoint.init(x: SIZE.width * CGFloat(index % 7) + scrollDistance + SIZE.width * 0.5, y: delegate.weekHeight() + SIZE.height * CGFloat(index / 7) + SIZE.height * 0.5), radius: radius, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
+                    let shadowOffset = CGSize.init(width: 0, height: 0)
+                    currentcontext?.saveGState()
+                    currentcontext?.setShadow(offset: shadowOffset, blur: 8.0, color: delegate.selectionBgColorOf($0).cgColor)
+                    pathRect.fill()
+                    currentcontext?.restoreGState()
                 }
             }
             let infosize = (info as NSString).size(withAttributes: attritustyle)
-            if scrolldirecation == .horizontal {
 
+            if scrolldirecation == .horizontal {
                 (info as NSString).draw(in: CGRect.init(x: SIZE.width * CGFloat(index % 7) + scrollDistance, y:  delegate.weekHeight() + SIZE.height * CGFloat(index / 7) + (SIZE.height - infosize.height) * 0.5, width: SIZE.width, height: SIZE.height), withAttributes: attritustyle)
             }
         }
@@ -158,12 +174,13 @@ extension ZJCalendarView {
                 (info as NSString).draw(in: CGRect.init(x: SIZE.width * CGFloat(index % 7) + scrollDistance + self.frame.width, y:  delegate.weekHeight() + SIZE.height * CGFloat(index / 7) + (SIZE.height - infosize.height) * 0.5, width: SIZE.width, height: SIZE.height), withAttributes: attritustyle)
             }
         }
+       // UIGraphicsPopContext()
     }
-
 
     /// 绘制 周末
     func drawWeek() {
         let currentcontext = UIGraphicsGetCurrentContext()
+
         currentcontext?.setAllowsAntialiasing(true)
         currentcontext?.setStrokeColor(delegate.weekBgColor().cgColor)
         // currentcontext?.setFillColor(delegate.weekBgColor().cgColor)
@@ -187,7 +204,6 @@ extension ZJCalendarView {
             let infosize = (info as NSString).size(withAttributes: attritustyle)
             (info as NSString).draw(in: CGRect.init(x: SIZE.width * CGFloat(index % 7) , y: (delegate.weekHeight()  - infosize.height) * 0.5, width: SIZE.width, height: delegate.weekHeight()), withAttributes: attritustyle)
         }
-        UIGraphicsPopContext()
     }
 
 
@@ -255,6 +271,7 @@ extension ZJCalendarView {
             let point = touch.location(in: self)
             moveTouchPoint = point
             scrollDistance = moveTouchPoint.x - beginTouchPoint.x
+
             self.setNeedsDisplay()
         }
     }
@@ -271,8 +288,11 @@ extension ZJCalendarView {
                         selecectDate(date)
                     }
                 }
+            }else {
+                self.selecectDate(nil)
+                handlerTouchEnd()
             }
-            handlerTouchEnd()
+
         }
     }
 
@@ -340,9 +360,15 @@ extension ZJCalendarView {
         self.setNeedsDisplay()
     }
 
+    func setSelectedDate(_ date:Date,animation:Bool) {
+        selecectDate(date)
+
+
+    }
+
 
     //TODO: 选择该日期
-    func selecectDate(_ date:Date?) {
+    fileprivate func selecectDate(_ date:Date?) {
         if selectedDates.count == 1 {
             delegate.deSelectedDate(selectedDates[0])
         }
