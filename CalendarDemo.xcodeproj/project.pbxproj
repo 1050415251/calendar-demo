@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		FD7AD081207F33FA005EFAB1 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AD080207F33FA005EFAB1 /* CalendarManager.swift */; };
+		FD9BD70220A1725E003B917D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9BD6ED20A145FD003B917D /* NotificationCenter.framework */; };
+		FD9BD70520A1725E003B917D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9BD70420A1725E003B917D /* TodayViewController.swift */; };
+		FD9BD70820A1725E003B917D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9BD70620A1725E003B917D /* MainInterface.storyboard */; };
+		FD9BD70C20A1725E003B917D /* CalendarDemoTodayExension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FD9BD70120A1725E003B917D /* CalendarDemoTodayExension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FDAF0E72207DF797005673E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E71207DF797005673E7 /* AppDelegate.swift */; };
 		FDAF0E74207DF797005673E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E73207DF797005673E7 /* ViewController.swift */; };
 		FDAF0E77207DF797005673E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDAF0E75207DF797005673E7 /* Main.storyboard */; };
@@ -17,8 +21,38 @@
 		FDAF0E88207E0240005673E7 /* ZJCalendarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAF0E87207E0240005673E7 /* ZJCalendarDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FD9BD70A20A1725E003B917D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDAF0E66207DF797005673E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD9BD70020A1725E003B917D;
+			remoteInfo = CalendarDemoTodayExension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD9BD6FC20A145FD003B917D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FD9BD70C20A1725E003B917D /* CalendarDemoTodayExension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FD7AD080207F33FA005EFAB1 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		FD9BD6ED20A145FD003B917D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FD9BD70120A1725E003B917D /* CalendarDemoTodayExension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalendarDemoTodayExension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD9BD70420A1725E003B917D /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FD9BD70720A1725E003B917D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FD9BD70920A1725E003B917D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9BD71020A174DB003B917D /* CalendarDemoTodayExension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalendarDemoTodayExension.entitlements; sourceTree = "<group>"; };
 		FDAF0E6E207DF797005673E7 /* CalendarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDAF0E71207DF797005673E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDAF0E73207DF797005673E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +65,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FD9BD6FE20A1725E003B917D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9BD70220A1725E003B917D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDAF0E6B207DF797005673E7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +83,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD9BD6EC20A145FD003B917D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD9BD6ED20A145FD003B917D /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD9BD70320A1725E003B917D /* CalendarDemoTodayExension */ = {
+			isa = PBXGroup;
+			children = (
+				FD9BD71020A174DB003B917D /* CalendarDemoTodayExension.entitlements */,
+				FD9BD70420A1725E003B917D /* TodayViewController.swift */,
+				FD9BD70620A1725E003B917D /* MainInterface.storyboard */,
+				FD9BD70920A1725E003B917D /* Info.plist */,
+			);
+			path = CalendarDemoTodayExension;
+			sourceTree = "<group>";
+		};
 		FDAF0E65207DF797005673E7 = {
 			isa = PBXGroup;
 			children = (
 				FDAF0E70207DF797005673E7 /* CalendarDemo */,
+				FD9BD70320A1725E003B917D /* CalendarDemoTodayExension */,
+				FD9BD6EC20A145FD003B917D /* Frameworks */,
 				FDAF0E6F207DF797005673E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FDAF0E6E207DF797005673E7 /* CalendarDemo.app */,
+				FD9BD70120A1725E003B917D /* CalendarDemoTodayExension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +156,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FD9BD70020A1725E003B917D /* CalendarDemoTodayExension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD9BD70D20A1725E003B917D /* Build configuration list for PBXNativeTarget "CalendarDemoTodayExension" */;
+			buildPhases = (
+				FD9BD6FD20A1725E003B917D /* Sources */,
+				FD9BD6FE20A1725E003B917D /* Frameworks */,
+				FD9BD6FF20A1725E003B917D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CalendarDemoTodayExension;
+			productName = CalendarDemoTodayExension;
+			productReference = FD9BD70120A1725E003B917D /* CalendarDemoTodayExension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FDAF0E6D207DF797005673E7 /* CalendarDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDAF0E80207DF798005673E7 /* Build configuration list for PBXNativeTarget "CalendarDemo" */;
@@ -99,10 +180,12 @@
 				FDAF0E6A207DF797005673E7 /* Sources */,
 				FDAF0E6B207DF797005673E7 /* Frameworks */,
 				FDAF0E6C207DF797005673E7 /* Resources */,
+				FD9BD6FC20A145FD003B917D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FD9BD70B20A1725E003B917D /* PBXTargetDependency */,
 			);
 			name = CalendarDemo;
 			productName = CalendarDemo;
@@ -119,6 +202,14 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = FlyKite;
 				TargetAttributes = {
+					FD9BD70020A1725E003B917D = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					FDAF0E6D207DF797005673E7 = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -138,11 +229,20 @@
 			projectRoot = "";
 			targets = (
 				FDAF0E6D207DF797005673E7 /* CalendarDemo */,
+				FD9BD70020A1725E003B917D /* CalendarDemoTodayExension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD9BD6FF20A1725E003B917D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9BD70820A1725E003B917D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDAF0E6C207DF797005673E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,6 +256,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD9BD6FD20A1725E003B917D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD9BD70520A1725E003B917D /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDAF0E6A207DF797005673E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,7 +278,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FD9BD70B20A1725E003B917D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD9BD70020A1725E003B917D /* CalendarDemoTodayExension */;
+			targetProxy = FD9BD70A20A1725E003B917D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		FD9BD70620A1725E003B917D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD9BD70720A1725E003B917D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		FDAF0E75207DF797005673E7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -190,6 +314,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD9BD70E20A1725E003B917D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CalendarDemoTodayExension/CalendarDemoTodayExension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EYL5FF5EVL;
+				INFOPLIST_FILE = CalendarDemoTodayExension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlyKite.CalendarDemo.CalendarDemoTodayExension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD9BD70F20A1725E003B917D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CalendarDemoTodayExension/CalendarDemoTodayExension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EYL5FF5EVL;
+				INFOPLIST_FILE = CalendarDemoTodayExension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FlyKite.CalendarDemo.CalendarDemoTodayExension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FDAF0E7E207DF798005673E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +473,7 @@
 		FDAF0E81207DF798005673E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CalendarDemo/Info.plist;
@@ -324,6 +491,7 @@
 		FDAF0E82207DF798005673E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CalendarDemo/Info.plist;
@@ -341,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD9BD70D20A1725E003B917D /* Build configuration list for PBXNativeTarget "CalendarDemoTodayExension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD9BD70E20A1725E003B917D /* Debug */,
+				FD9BD70F20A1725E003B917D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FDAF0E69207DF797005673E7 /* Build configuration list for PBXProject "CalendarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
